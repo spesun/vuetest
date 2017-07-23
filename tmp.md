@@ -20,3 +20,11 @@ new Vue是启动一个实例，export default只是一个组件
 # other
 nerdtree 多次按ctrl+w的左右窗口切换
 命令行打开图片eog   a.png 
+
+# git
+### 添加本地已有的git，到github上
+git remote add origin https://github.com/spesun/tmp.git
+git push -u origin master
+### https免密码
+vim .git/config
+url = https://spesun:password@github.com/spesun/vuetest.git
