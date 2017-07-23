@@ -1,0 +1,45 @@
+<html>
+<div id="output"></div>
+<!-- Load Babel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuex"></script>
+</head>
+<!-- Your custom script here -->
+<div id="app">
+<p>{{ count }}</p>
+<p>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+</p>
+</div>
+<script type="text/babel">
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+  	increment: state => state.count++,
+    decrement: state => state.count--
+  }
+})
+
+new Vue({
+  el: '#app',
+  computed: {
+    count () {
+	    return store.state.count
+    }
+  },
+  methods: {
+    increment () {
+      store.commit('increment')
+    },
+    decrement () {
+    	store.commit('decrement')
+    }
+  }
+})
+</script>
+
+</html>
