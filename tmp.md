@@ -28,3 +28,4 @@ git push -u origin master
 ### https免密码
 vim .git/config
 url = https://spesun:password@github.com/spesun/vuetest.git
+test换行 
