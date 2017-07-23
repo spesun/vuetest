@@ -2,6 +2,7 @@
 [30分钟掌握ES6/ES2015核心内容（上）](https://segmentfault.com/a/1190000004365693 )
 [ECMAScript 6 入门-阮]( http://es6.ruanyifeng.com/)
 # webpack
+[Webpack 入门教程](http://www.runoob.com/w3cnote/webpack-tutorial.html)
 [webpack-simple](https://github.com/vuejs-templates/webpack-simple)
 
 # nodeJS
@@ -9,10 +10,8 @@
 [七天学会NodeJS](https://nqdeng.github.io/7-days-nodejs/)
 
 # babeljs
-
 https://babeljs.io/docs/setup/#installation
 
- 
 # vue
 [使用Vue-Router 2实现路由功能](http://blog.csdn.net/sinat_17775997/article/details/54710420)
 new Vue是启动一个实例，export default只是一个组件
@@ -28,4 +27,5 @@ git push -u origin master
 ### https免密码
 vim .git/config
 url = https://spesun:password@github.com/spesun/vuetest.git
-test换行 
+### 换行
+git config --global core.autocrlf false
