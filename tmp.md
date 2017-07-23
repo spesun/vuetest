@@ -11,6 +11,7 @@
 
 # babeljs
 https://babeljs.io/docs/setup/#installation
+[在node中使用babel6的一些简单分享](http://cnodejs.org/topic/56460e0d89b4b49902e7fbd3)
 
 # vue
 [使用Vue-Router 2实现路由功能](http://blog.csdn.net/sinat_17775997/article/details/54710420)
