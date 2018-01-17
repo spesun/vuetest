@@ -34,3 +34,9 @@ wget -O - http://packages.openmediavault.org/public/archive.key | apt-key add -
 apt-get install openmediavault
 omv-initsystem
 
+
+http://www.songming.me/openmediavault
+OMV2.X可以使用如下命令安装第三方插件源：
+wget http://omv-extras.org/openmediavault-omvextrasorg_latest_all.deb 
+dpkg -i openmediavault-omvextrasorg_latest_all.deb 
+apt-get update 
