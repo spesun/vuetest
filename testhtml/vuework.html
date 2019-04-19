@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+  <title></title>
+  <script src="./vue.js"></script>
+  <style type="text/css">
+        .active { color:red}
+  </style>
+
+</head>
+<body>
+
+<div id="app">
+    <p v-bind:class="{ active: isActive }" v-on:click="toggle()">{{ message }}</p>
+    <input type="text" v-model="message"/>
+
+
+	<p></p>
+    <input type="button"   value="单击事件" v-on:click="show('aa')"/>
+
+	<p></p>
+	<a v-bind:href="url">这是一个链接</a>
+
+	<p></p>
+    <child v-bind:message="message" v-on:increment="incrementTotal">
+	   <h1>aaa</h1>
+      <p slot="footer">这里有一些联系信息</p>
+	</child>
+
+    <p>total num is {{total}}</p>
+	
+</div>
+
+<script>
+
+        Vue.component('child', {
+          // 声明 props
+          props: ['message'],
+          data: function () {
+                    return { counter: 0 }
+                  },
+          methods: {
+                    increment: function () {
+                      this.counter += 1
+                      this.$emit('increment')
+                    }
+                 },
+          // 就像 data 一样，prop 可以用在模板内
+          // 同样也可以在 vm 实例中像“this.message”这样使用
+          template: '<div v-on:click="increment">{{ message }} <slot name="footer"></slot> <slot></slot> </div>'
+
+        })
+
+        // 这是我们的Model
+        var exampleData = {
+            message: 'Hello World!',
+            isActive: true,
+            total : 0,
+			url: 'http://www.baidu.com'
+        }
+
+        // 创建一个 Vue 
+        new Vue({
+            el: '#app',
+            data: exampleData,
+            methods: {
+                    show:function(input) {
+                        alert(input);
+                    },
+                    toggle:function() {
+                        if (this.isActive) {
+                            this.isActive=false;
+                        } else {
+                            this.isActive=true;
+                        }
+                    },
+                    incrementTotal: function () {
+                      this.total += 1
+                    }
+            }
+
+
+        }
+        
+        )
+</script>
+</body>
+</html>

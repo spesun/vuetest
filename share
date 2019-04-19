@@ -1,0 +1,42 @@
+wicd
+/etc/apt/sources.list
+deb http://httpredir.debian.org/debian/ wheezy main contrib non-free
+apt-get update && apt-get install firmware-iwlwifi
+
+
+deb http://mirrors.163.com/debian wheezy main non-free contrib
+deb http://mirrors.163.com/debian wheezy-proposed-updates main contrib non-free
+deb-src http://mirrors.163.com/debian wheezy main non-free contrib
+deb-src http://mirrors.163.com/debian wheezy-proposed-updates main contrib non-free
+deb http://mirrors.163.com/debian-security wheezy/updates main contrib non-free
+deb-src http://mirrors.163.com/debian-security wheezy/updates main contrib non-free
+
+sudo dd if=xxx.iso of=/dev/sdX bs=4096
+dpkg -i *.deb
+
+Debian 9 "Stretch"
+Debian 8 "Jessie"
+Debian 7 "Wheezy"
+
+deb http://ftp.us.debian.org/debian/ wheezy main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ wheezy main contrib non-free
+
+deb http://security.debian.org/ wheezy/updates main contrib non-free
+deb-src http://security.debian.org/ wheezy/updates main contrib non-free
+
+# wheezy-updates, previously known as 'volatile'
+deb http://ftp.us.debian.org/debian/ wheezy-updates main contrib non-free
+deb-src http://ftp.us.debian.org/debian/ wheezy-updates main contrib non-free
+
+echo "deb http://packages.openmediavault.org/public kralizec main" > /etc/apt/sources.list.d/openmediavault.list
+apt-get update
+wget -O - http://packages.openmediavault.org/public/archive.key | apt-key add -
+apt-get install openmediavault
+omv-initsystem
+
+
+http://www.songming.me/openmediavault
+OMV2.X可以使用如下命令安装第三方插件源：
+wget http://omv-extras.org/openmediavault-omvextrasorg_latest_all.deb 
+dpkg -i openmediavault-omvextrasorg_latest_all.deb 
+apt-get update 
