@@ -7,7 +7,7 @@
 </head>
 <!-- Your custom script here -->
 <div id="app">
-<p>{{ count }}</p>
+<p>{{ count1 }}</p>
 <p>
     <button @click="increment">+</button>
     <button @click="decrement">-</button>
@@ -27,7 +27,7 @@ const store = new Vuex.Store({
 new Vue({
   el: '#app',
   computed: {
-    count () {
+    count1 () {
 	    return store.state.count
     }
   },
